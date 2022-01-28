@@ -1,0 +1,27 @@
+<HTML>
+    <Head>
+    </Head>
+    <Body>
+        <Header role="banner"><h1>Greetings</h1></Header>
+        <main role="main">
+            <form>
+                <Div>
+                    <label for="name">Please enter your name:</label>
+                    <input type="text" name="name" id="name" />
+                    <input type="button" id="Greet" onclick="GreetUser()" value="Display Greetings" />
+                </Div>
+            </form>
+            <Div id="greeting"></Div>
+        </main>
+        <script>
+            function GreetUser() {
+                var name = document.querySelector("#name").value;
+
+                if ((name==="Alice")||(name==="Bob"))
+                    document.querySelector("#greeting").innerHTML = "Hello " + name;
+                else    
+                    document.querySelector("#greeting").innerHTML = "Hello Stranger";
+            }
+        </script>
+    </Body>
+</HTML>
