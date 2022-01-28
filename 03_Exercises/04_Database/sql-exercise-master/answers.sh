@@ -14,4 +14,20 @@
 7. update students
 	set points=points-50
 	where name="Alex"
-8. 
+
+. create table graduates
+	(	"ID" integer not null unique primary key autoincrement,
+		"Name" text not null unique,
+		"Age" integer,
+		"Gender" text,
+		"Points" integer,
+		"Graduation" text )
+10. insert into graduates (Name, Age, Gender, Points)
+		select Name, Age, Gender, Points
+			from students
+			where Name="Layal"
+11. update graduates
+		set graduation = "08/09/2018"
+		where Name="Layal"
+12. Delete From students
+		where Name="Layal"
