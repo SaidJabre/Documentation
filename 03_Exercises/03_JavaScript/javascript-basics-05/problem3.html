@@ -2,19 +2,19 @@
     <Head>
     </Head>
     <Body>
-        <Header role="banner"><h1>Greetings</h1></Header>
+        <Header role="banner"><h1>Accumulated Sum </h1></Header>
         <main role="main">
             <form>
                 <Div>
                     <label for="num1">Please enter a number:</label>
                     <input type="number" name="num1" id="num1" />
-                    <input type="button" id="Greet" onclick="GreetUser()" value="Display Greetings" />
+                    <input type="button" id="GetResult" onclick="calc()" value="Get Result" />
                 </Div>
             </form>
             <Div id="result"></Div>
         </main>
         <script>
-            function GreetUser() {
+            function calc() {
                 var num1 = parseInt(document.querySelector("#num1").value);
                 var result = "";
 
