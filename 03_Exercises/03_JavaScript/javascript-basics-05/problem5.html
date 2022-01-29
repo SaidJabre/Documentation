@@ -1,0 +1,41 @@
+<HTML>
+    <Head>
+    </Head>
+    <Body>
+        <Header role="banner"><h1>Accumulated Sum or Product</h1></Header>
+        <main role="main">
+            <form onsubmit="return false">
+                <Div>
+                    <label for="num1">Please enter a number with + for sum and x for Product:</label>
+                    <input type="text" name="num1" id="num1" />
+                    <button type="button" id="GetResult" onclick="calc()"> Get Result </button>
+                </Div>
+            </form>
+            <Div id="result"></Div>
+        </main>
+        <script>
+            function calc() {
+                var op= document.querySelector("#num1").value.trim();
+                var num1 = 0;
+
+                num1 = parseInt(op.substring(0,op.length-1).trim());
+                op = op.charAt(op.length-1);
+
+                var result = "";
+
+                if (!(isNaN(num1)) && ((op==="+")||(op==="x")))
+                {
+                    if (op==="+")
+                        for (i=num1-1;i>0;i--)
+                                num1 += i;
+                    else if (op==="x")
+                        for (i=num1-1;i>0;i--)
+                                num1 *= i;
+                    result = "Result is " + num1;
+                }
+                
+                document.querySelector("#result").innerHTML = result;
+            }
+        </script>
+    </Body>
+</HTML>
