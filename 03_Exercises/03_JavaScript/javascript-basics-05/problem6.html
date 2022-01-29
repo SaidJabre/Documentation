@@ -1,0 +1,30 @@
+<HTML>
+    <Head>
+    </Head>
+    <Body>
+        <Header role="banner"><h1>Multiplication Table</h1></Header>
+        <main role="main">
+            <form onsubmit="return false">
+                <Div>
+                    <button type="button" id="GetResult" onclick="calc()"> Get Result </button>
+                </Div>
+            </form>
+            <Div id="result"></Div>
+        </main>
+        <script>
+            function calc() {
+                
+                var table="";
+
+                for (i=1;i<=12;i++)
+                {   table = table + i + ":";
+                    for (j=1;j<=12;j++)
+                        table = table + " " + i*j;
+                    table = table + "<BR>";
+                }
+                alert(table);
+                document.querySelector("#result").innerHTML = table;
+            }
+        </script>
+    </Body>
+</HTML>
