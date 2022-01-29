@@ -1,0 +1,31 @@
+<HTML>
+    <Head>
+    </Head>
+    <Body>
+        <Header role="banner"><h1>Prime Numbers</h1></Header>
+        <main role="main">
+            <form onsubmit="return false">
+                <Div>
+                    <button type="button" id="GetResult" onclick="calc()"> Get Result </button>
+                </Div>
+            </form>
+            <Div id="result"></Div>
+        </main>
+        <script>
+            function calc() {
+                
+                var prime="";
+
+                for (i=2;i<=30;i++)
+                {   
+                    for (j=i-1;j>1;j--)
+                        if (i%j===0)
+                            j=0;
+                    if (j===1)
+                      prime += i + " ";
+                }
+                document.querySelector("#result").innerHTML = prime;
+            }
+        </script>
+    </Body>
+</HTML>
