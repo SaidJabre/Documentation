@@ -1,0 +1,68 @@
+<HTML>
+    <Head>
+    </Head>
+    <Body>
+        <Header role="banner"><h1>Guessing Game</h1></Header>
+        <main role="main">
+            <form onsubmit="return false">
+                <Div>
+                    <label for="num1">Please enter your guessed number between 1 and 100:</label>
+                    <input type="number" name="num1" id="num1" onchange="calc()"/>
+                    <button type="button" id="GetResult" onclick="calc()"> Check Guess</button>
+                </Div>
+            </form>
+            <Div id="result"></Div>
+            <Div id="secret"></Div>
+        </main>
+        <script>
+
+            var secret = Math.round(Math.random()*100);
+            var prev_guess = 0;
+            var trials = 0;
+            document.querySelector("#num1").value = "";
+//document.querySelector("#secret").innerHTML = secret;
+            function calc() {
+                var result = "";
+                var guess = parseInt(document.querySelector("#num1").value);
+
+                if (!(isNaN(guess)) && (guess>=0) && (guess<=100))
+                {
+                    if (prev_guess != guess)
+                    {
+                            prev_guess = guess;
+                            trials +=1;
+                    }
+
+                    if (secret===guess)
+                    {
+                        result = "Correct with " + trials + " trials" + "<BR>Game will start over with a new secret number";
+                        resest_vars();
+                    }
+                    else
+                    {
+                        if (secret>guess)
+                            result = "too small trial " + trials + "/8";
+                        else
+                            result = "too large trial " + trials + "/8";
+                        
+                        if (trials===8)
+                        {
+                            result = result + "<BR>Game Ended. Secret number is " + secret + "<BR>Game will start over with a new secret number";
+                            resest_vars();
+                        }
+                    }
+                }
+                document.querySelector("#result").innerHTML = result;
+
+            }
+
+            function resest_vars() {
+                secret = Math.round(Math.random()*100);
+                trials = 0;
+                prev_guess = 0;
+                document.querySelector("#num1").value = "";
+//document.querySelector("#secret").innerHTML = secret;
+            }
+        </script>
+    </Body>
+</HTML>
