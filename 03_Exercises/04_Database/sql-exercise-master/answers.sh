@@ -31,3 +31,16 @@
 		where Name="Layal"
 12. Delete From students
 		where Name="Layal"
+
+14. select e.Name,c.Name,c.Date
+	from employees e inner join companies c
+				on e.Company = c.Name
+15. select e.Name
+	from employees e inner join companies c
+				on e.Company = c.Name
+	where c.Date < 2000
+16. select c.Name
+	from employees e inner join companies c
+		on e.Company = c.name
+		where e.Role = "Graphic Designer"
+
