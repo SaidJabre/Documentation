@@ -43,4 +43,20 @@
 	from employees e inner join companies c
 		on e.Company = c.name
 		where e.Role = "Graphic Designer"
-
+18. select name
+	from students
+	where points = (
+			select max(points)
+				from students)
+19. select avg(points)
+		from students;
+20. select count(*), Points
+		from students
+		group by Points
+		Having Points = 500
+21. select name
+		from students
+		where name like '%s%'
+22. Select *
+		from students
+		order by Points desc
