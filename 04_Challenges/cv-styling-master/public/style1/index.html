@@ -12,6 +12,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style1.css">
   <!-- /Stylesheets -->
 
 </head>
@@ -19,26 +20,59 @@
   <div id="#wrapper">
     <header>
       <div>
-        <hgroup>
-          <h1>Student Name</h1>
-          <h2>Codes and Sleeps</h2>
-        </hgroup>
-        <figure>
+        <article>
+          <h1 class="MyName">Student Name</h1>
+          <h2 class="MyName">Codes and Sleeps</h2>
+        </article>
+        <article class="MyImage">
           <img src="../images/110x110.png" alt="Student Name">
-        </figure>
+        </article>
+        <article class="contacts">
+          <dl class="contact contact-email">
+            <dt class="contact-type">Email</dt>
+            <dd class="contact-value">
+              <a href="mailto:student@codi.tech">student@codi.tech</a>
+            </dd>
+          </dl>
+          <dl class="contact contact-skype">
+            <dt class="contact-type">Skype</dt>
+            <dd class="contact-value">first-last</dd>
+          </dl>
+          <dl class="contact contact-phone">
+            <dt class="contact-type">Phone/Whatsapp</dt>
+            <dd class="contact-value">
+              <a href="tel:+96170261482">+9613123123</a>
+            </dd>
+          </dl>
+          <dl class="contact contact-github">
+            <dt class="contact-type">Github</dt>
+            <dd class="contact-value">
+              <a href="https://github.com/User/" target="_blank">UserName</a>
+            </dd>
+          </dl>
+          <dl class="contact contact-facebook">
+            <dt class="contact-type">Facebook</dt>
+            <dd class="contact-value">
+              <a href="//www.facebook.com/profileName" target="_blank">Profile Name</a>
+            </dd>        
+          </dl>
+        </article>
       </div>
     </header>
     <div class="content">
       <section id="about">
-        <h3>About</h3>
+        <h3><img src="../images/bullet.png" />About</h3>
+        <hr>
         <p>
           Pellentesque nec nisi at sapien sagittis sagittis. Aliquam eu condimentum mauris. Proin accumsan enim at risus hendrerit lobortis. Nunc sollicitudin sodales lectus, et rhoncus mi molestie hendrerit. Vestibulum velit lorem, rhoncus a congue ultricies, faucibus facilisis risus. Mauris turpis ante, aliquet ac venenatis at, ornare ut velit. Duis ut erat neque, eget consectetur tellus. 
         </p>
       </section>
       <section id="competencies">
-        <h3>Competencies</h3>
+        <h3><img src="../images/bullet.png" />Competencies</h3>
+        <hr>
         <div class='skills skills-primary'>
-          <div class='skill' data-skill="5">
+          <br><span>Main</span>
+          <div id="1" class='skill' data-skill="5">
             <span>HTML</span>
           </div>
           <div class='skill' data-skill="3">
@@ -49,6 +83,7 @@
           </div>
         </div>
         <div class='skills skills-secondary'>
+          <br><span>Other</span>
           <div class='skill' data-skill="9">
             <span>HTML</span>
           </div>
@@ -61,7 +96,8 @@
         </div>
       </section>
       <section id="experiences">
-        <h3>Experiences</h3>
+        <h3><img src="../images/bullet.png" />Experiences</h3>
+        <hr>
         <div class="experience">
           <h4>
             <span class="experience-type">Man2ouche Seller</span>
@@ -106,7 +142,8 @@
         </div>
       </section>
       <section id="education">
-        <h3>Education</h3>
+        <h3><img src="../images/bullet.png" />Education</h3>
+        <hr>
         <div class="experience">
           <h4>
             <span class="experience-type">Web Stack Training</span>
@@ -151,47 +188,25 @@
         </div>
       </section>
       <section id="hobbies">
-        <h3>Hobbies</h3>
+        <h3><img src="../images/bullet.png" />Hobbies</h3>
+        <hr>
         <ul>
           <li>Watching Youtube</li>
           <li>Sleeping</li>
           <li>Writing CVs</li>
         </ul>
       </section>
-      <section id="contact">
-        <h3>Contact</h3>
-        <div class="contacts">
-          <dl class="contact contact-email">
-            <dt class="contact-type">Email</dt>
-            <dd class="contact-value">
-              <a href="mailto:student@codi.tech">student@codi.tech</a>
-            </dd>
-          </dl>
-          <dl class="contact contact-skype">
-            <dt class="contact-type">Skype</dt>
-            <dd class="contact-value">first-last</dd>
-          </dl>
-          <dl class="contact contact-phone">
-            <dt class="contact-type">Phone/Whatsapp</dt>
-            <dd class="contact-value">
-              <a href="tel:+96170261482">+9613123123</a>
-            </dd>
-          </dl>
-          <dl class="contact contact-github">
-            <dt class="contact-type">Github</dt>
-            <dd class="contact-value">
-              <a href="https://github.com/User/" target="_blank">UserName</a>
-            </dd>
-          </dl>
-          <dl class="contact contact-facebook">
-            <dt class="contact-type">Facebook</dt>
-            <dd class="contact-value">
-              <a href="//www.facebook.com/profileName" target="_blank">Profile Name</a>
-            </dd>        
-          </dl>
-        </div>
-      </section>
     </div>
   </div>
+<script defer>
+  const items = document.querySelectorAll(".skill");
+ 
+  for (const item of items) {
+    var data_skill = item.getAttribute("data-skill");
+    var gradColor = 10 * parseInt(data_skill);
+    //alert("Linear-gradient(to right, red )"+gradColor+"%, Silver "+gradColor+"%)")
+    item.style.background = "Linear-gradient(to right, red "+gradColor+"%, Silver "+gradColor+"%)";
+  }
+</script>
 </body>
 </html>
