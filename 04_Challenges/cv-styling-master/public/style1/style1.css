@@ -1,67 +1,72 @@
 body {
     background: white;
-    border: 2px solid red;
     font-family: Arial, Helvetica, sans-serif;
 }
 header div {
     background-color: silver;
     color: red;
-    width: 100vw;
-    height: 130px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 0px;
-    border: 2px solid blue;
 }
-.MyName { margin-left:200px;}
-.MyImage { margin-left:50px;}
-.MyImage { margin-right:50px;}
-.contacts {
-    background-color: red;
-    width: 40%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 0;
-    border: 2px solid rgb(68, 185, 127);
+@media screen and (max-width:500px){
+    header div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-bottom:20px;
+    } 
+    
+    .MyImage { margin-left:20px;}
+
+    .content {
+        display: grid;
+        grid-template-rows: 230px 310px 450px 450px 130px;
+    }
+    #about {
+        margin-top: 30px;
+    }
+    .contact-type {
+        width:35%;
+    }
+    .contact-value {
+        background-color: white;
+        width:55%;
+    }
 }
-.contacts dl {
-    background-color: black;
-    width:100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-.contact-type {
-    float: left;
-    background-color: red;
-    color:white;
-    width:40%;
-    padding-left: 5px;
-    margin: 0;
-}
-.contact-value {
-    float: left;
-    background-color: black;
-    color:red;
-    width:57%;
-    padding: 0;
-    margin: 0;
-}
-.contact-value a {
-    color: red;
+@media screen and (min-width:500px) {
+    header div {
+            display: grid;
+            grid-template-columns: 30% 25% 50%;
+            grid-template-areas: "Name Image Contact";
+            align-items: center;
+            width: 100vw; 
+    }
+    .MyName { text-align:right; width:60%}
+
+    .content {
+        display: grid;
+        grid-template-rows: 390px 390px 200px;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 0px;
+    }
+    .contacts {
+        position: absolute;
+        top: 0px;
+        left: 900px;
+    }
+    .contact-type {
+        width:10%;
+    }
+    .contact-value {
+        background-color: black;
+        width:88%;
+    }
 }
 .content {
     display: grid;
-    grid-template-rows: 390px, 390px 200px;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 0px;
     width: 80%;
     font-size: 13.8px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .content  section h3 {
     vertical-align: center;
@@ -84,4 +89,37 @@ hr {
 }
 .content h4 {
     color: red;
+}
+
+.contacts {
+    background-color: white;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.contacts dl {
+    width:100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.contact-type {
+    float: left;
+    background-color: red;
+    color:white;
+    padding-left: 5px;
+    margin: 0;
+}
+.contact-value {
+    float: left;
+    color:red;
+    padding: 0;
+    margin: 0;
+}
+.contact-value a {
+    color: red;
+}
+.Skype {
+    color: black !important;
 }
